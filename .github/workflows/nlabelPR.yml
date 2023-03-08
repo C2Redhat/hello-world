@@ -1,0 +1,24 @@
+# This is a basic workflow that is manually triggered
+
+name: Lable Pull Request
+
+# Controls when the action will run. Workflow runs when manually triggered using the UI
+# or API.
+on:
+  pull_request:
+    types: [opened]
+   
+# A workflow run is made up of one or more jobs that can run sequentially or in parallel
+jobs:
+  # This workflow contains a single job called "greet"
+  label:
+    # The type of runner that the job will run on
+    runs-on: self-hosted
+    
+    steps:
+      - name: addlabel
+        uses: buildsville/add-remove-label@v1
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
+          label: "Testing Starting"
+          type: add
