@@ -32,7 +32,7 @@ jobs:
           
   Add_label:
     runs-on: self-hosted
-    name: Add label
+    name: self-hosted
     steps:
       - name: Add label
         uses: buildsville/add-remove-label@v2.0.0
