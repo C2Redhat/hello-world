@@ -14,17 +14,12 @@ jobs:
   label:
     # The type of runner that the job will run on
     runs-on: self-hosted
-   
+    
     steps:
-      - uses: actions/github-script@v3
+      - name: addlabel
+        uses: buildsville/add-remove-label@v1
         with:
-          github-token: ${{secrets.GITHUB_TOKEN}}
-          script: |
-            # Add 'new submission' label
-            github.issues.addLabels({
-              issue_number: context.issue.number,
-              owner: context.repo.owner,
-              repo: context.repo.repo,
-              labels: ['new submission']
-            })
-              
+          token: ${{ secrets.GITHUB_TOKEN }}
+          label: "Testing Starting"
+          type: add
+   
