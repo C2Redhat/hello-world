@@ -18,5 +18,5 @@ jobs:
       - name: addlabel
         uses: actions-ecosystem/action-remove-labels@v1
         with:
-          github-token: ${{secrets.GITHUB_TOKEN}}
+          github_token: ${{secrets.GITHUB_TOKEN}}
           labels: bug
