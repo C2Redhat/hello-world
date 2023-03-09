@@ -20,12 +20,23 @@ env:
 # A workflow run is made up of one or more jobs that can run sequentially or in parallel
 jobs:
   # This workflow contains a single job called "greet"
-  label:
+  #label:
     # The type of runner that the job will run on
-    runs-on: self-hosted
+    #runs-on: self-hosted
+    #steps:
+    #  - uses: actions/checkout@v2
+    #  - uses: actions-ecosystem/action-add-labels@v1.1.0
+    #    with:
+    #      github_token: ${{secrets.GITHUB_TOKEN}}
+    #      labels: bug
+          
+  Add_label:
+    runs-on: ubuntu-latest
+    name: Add label
     steps:
-      - uses: actions/checkout@v2
-      - uses: actions-ecosystem/action-add-labels@v1.1.0
+      - name: Add label
+        uses: buildsville/add-remove-label@v2.0.0
         with:
-          github_token: ${{secrets.GITHUB_TOKEN}}
+          token: ${{secrets.GITHUB_TOKEN}}
           labels: bug
+          type: add
