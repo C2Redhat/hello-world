@@ -6,12 +6,17 @@ name: Lable Pull Request
 # or API.
 on:
   pull_request:
+  
+permissions:
+  checks: write
+  contents: read
+  issues: read
+  pull-requests: write
    
 # A workflow run is made up of one or more jobs that can run sequentially or in parallel
 jobs:
   # This workflow contains a single job called "greet"
   label:
-    permissions: write-all
     # The type of runner that the job will run on
     runs-on: self-hosted
     steps:
