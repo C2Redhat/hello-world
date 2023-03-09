@@ -33,6 +33,12 @@ jobs:
   Add_label:
     runs-on: self-hosted
     name: self-hosted
+    permissions:
+      id-token: write
+      contents: write
+      issues: write
+      pull-requests: write
+      checks: write
     steps:
       - name: Add label
         uses: buildsville/add-remove-label@v2.0.0
