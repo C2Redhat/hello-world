@@ -14,6 +14,8 @@ permissions:
   pull-requests: write
   checks: write
   
+env:
+  GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
    
 # A workflow run is made up of one or more jobs that can run sequentially or in parallel
 jobs:
