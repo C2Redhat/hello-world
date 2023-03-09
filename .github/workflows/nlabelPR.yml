@@ -31,7 +31,7 @@ jobs:
     #      labels: bug
           
   Add_label:
-    runs-on: ubuntu-latest
+    runs-on: self-hosted
     name: Add label
     steps:
       - name: Add label
