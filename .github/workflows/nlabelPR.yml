@@ -19,13 +19,17 @@ env:
    
 # A workflow run is made up of one or more jobs that can run sequentially or in parallel
 jobs:
+  run1:
+    RUN_RES: Done Testing
   # This workflow contains a single job called "greet"
-  label:
+  labelPR:
     # The type of runner that the job will run on
+    name: lablePR
     runs-on: self-hosted
+    needs: run1
     steps:
       - uses: actions/checkout@v2
       - uses: actions-ecosystem/action-add-labels@v1.1.0
         with:
           github_token: ${{secrets.GITHUB_TOKEN}}
-          labels: Start Testing
+          labels: ${ RUN_RES }
