@@ -22,7 +22,7 @@ jobs:
   run1:
     name: run1
     runs-on: self-hosted
-    stpes:
+    env:
       RUN_RES: Done Testing
   # This workflow contains a single job called "greet"
   labelPR:
