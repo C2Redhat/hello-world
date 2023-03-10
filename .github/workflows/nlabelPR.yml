@@ -23,11 +23,12 @@ jobs:
   labelPR:
     # The type of runner that the job will run on
     runs-on: self-hosted
-    env:
-      RUN_RES: Done Testing
     steps:
-      - uses: actions/checkout@v2
-      - uses: actions-ecosystem/action-add-labels@v1.1.0
+      - name: setupEnv
+        env:
+          RUN_RES: DONE
+      - name: label
+        uses: actions-ecosystem/action-add-labels@v1.1.0
         with:
           github_token: ${{secrets.GITHUB_TOKEN}}
           labels: ${{env.RUN_RES}}
