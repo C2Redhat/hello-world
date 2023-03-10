@@ -20,7 +20,10 @@ env:
 # A workflow run is made up of one or more jobs that can run sequentially or in parallel
 jobs:
   run1:
-    RUN_RES: Done Testing
+    name: run1
+    runs-on: self-hosted
+    stpes:
+      RUN_RES: Done Testing
   # This workflow contains a single job called "greet"
   labelPR:
     # The type of runner that the job will run on
