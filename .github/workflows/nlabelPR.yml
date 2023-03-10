@@ -40,9 +40,12 @@ jobs:
       pull-requests: write
       checks: write
     steps:
-      - name: Add label
-        uses: buildsville/add-remove-label@v2.0.0
+      - uses: actions/github-script@v6
         with:
-          token: ${{ secrets.GITHUB_TOKEN }}
-          labels: bug
-          type: add
+          script: |
+            github.rest.issues.addLabels({
+              pr_number: context.pr.number,
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              labels: ["triage"]
+            })
