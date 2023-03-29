@@ -23,4 +23,9 @@ jobs:
     - name: Dump GitHub context
       id: github_context_step
       run: |
-        echo "REPO: ${{ github.repository }}"
+        REPO=${{ github.repository }}
+        echo "REPO: ${REPO//\//-}"
+        
+        
+        
+        
